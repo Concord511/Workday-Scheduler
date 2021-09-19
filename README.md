@@ -7,9 +7,9 @@ A simple calendar app for scheduling your work day.
 - Click on the central, color-coded blocks to add or change events for that hour.
 - Use the blue, save buttons on the right of each corresponding description block to save your changes.
 - Colors update as time passes:
-    - Grey - past
-    - Red - present
-    - Green - future
+    - Grey - past hours
+    - Red - present hour
+    - Green - future hours
 
 ## Screenshot
 
