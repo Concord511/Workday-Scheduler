@@ -83,7 +83,9 @@ $(".time-block").on("click", ".saveBtn", function() {
 auditTime();
 
 // set an interval to call auditTime() every minute
-setInterval(auditTime(), 60000);
+setInterval(function() {
+    auditTime();
+}, 60000);
 
 // call the function to load tasks from localStorage
 loadTasks();
