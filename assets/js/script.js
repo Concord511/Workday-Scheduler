@@ -8,7 +8,7 @@ let currentTasks = {};
 // function that checks the current time against hour blocks and assigns them their corresponding color
 const auditTime = function() {
     $(".description").each(function() {
-        let currentHour = 14; // parseInt(moment().hour());
+        let currentHour = parseInt(moment().hour());
         let hourBlock = parseInt($(this).attr("id").replace("div", ""));
         if (currentHour > hourBlock) {
             $(this).addClass("past");
@@ -67,13 +67,15 @@ $(".time-block").on("click", ".saveBtn", function() {
     let id = $(this).attr("id").replace("btn", "");
     let textEl = $("#div" + id);
     let divText = textEl.val().trim();
+    if (!divText) {
+        divText = textEl.text().trim();
+    };
     let divEl = $("<div>")
         .attr("id", "div" + id)
         .addClass(textEl.attr("class"))
         .text(divText);
     textEl.replaceWith(divEl);
     currentTasks[id] = divText;
-    console.log(currentTasks);
     saveTasks();
 });
 
