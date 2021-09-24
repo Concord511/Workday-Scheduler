@@ -7,9 +7,11 @@ const auditTime = function() {
         let currentHour = parseInt(moment().hour());
         let hourBlock = parseInt($(this).attr("id").replace("div", ""));
         if (currentHour > hourBlock) {
+            $(this).removeClass("present");
             $(this).addClass("past");
         }
         else if (currentHour === hourBlock) {
+            $(this).removeClass("future");
             $(this).addClass("present");
         }
         else if (currentHour < hourBlock) {
