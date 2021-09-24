@@ -1,7 +1,3 @@
-// assign the currentDay id tag the current date in requested format
-let currentDate = moment().format("dddd, MMM Do");
-$("#currentDay").text(currentDate);
-
 // assign an empty object to hold tasks
 let currentTasks = {};
 
@@ -20,6 +16,8 @@ const auditTime = function() {
             $(this).addClass("future");
         }
     });
+    let currentDate = moment().format("dddd, MMM Do");
+    $("#currentDay").text(currentDate);
 }
 
 // function that savesTasks
@@ -48,6 +46,7 @@ const loadTasks = function() {
             $("#div" + id).text(text);
         });
     }
+    auditTime();
 }
 
 // on-click event for editing hourly tasks
